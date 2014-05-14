@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using WebApplication1;
+using SchoolEF6.DAL;
 
 namespace WebApplication1.Controllers
 {

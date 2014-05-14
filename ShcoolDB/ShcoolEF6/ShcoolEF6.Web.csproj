@@ -160,56 +160,19 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StandardsController.cs" />
     <Compile Include="Controllers\StudentAddressesController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
-    <Compile Include="Course.cs">
-      <DependentUpon>SchoolDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GetCoursesByStudentId_Result.cs">
-      <DependentUpon>SchoolDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SchoolDBModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SchoolDBModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SchoolDBModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SchoolDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SchoolDBModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SchoolDBModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Standard.cs">
-      <DependentUpon>SchoolDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="Student.cs">
-      <DependentUpon>SchoolDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="StudentAddress.cs">
-      <DependentUpon>SchoolDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Teacher.cs">
-      <DependentUpon>SchoolDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="View_StudentCourse.cs">
-      <DependentUpon>SchoolDBModel.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\SchoolDBscript.sql" />
@@ -221,23 +184,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="SchoolDBModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SchoolDBModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="SchoolDBModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SchoolDBModel.edmx</DependentUpon>
-      <LastGenOutput>SchoolDBModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="SchoolDBModel.edmx.diagram">
-      <DependentUpon>SchoolDBModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="SchoolDBModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SchoolDBModel.edmx</DependentUpon>
-      <LastGenOutput>SchoolDBModel.cs</LastGenOutput>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -265,20 +211,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Manage.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Standards\Create.cshtml" />
     <Content Include="Views\Standards\Delete.cshtml" />
@@ -306,7 +238,12 @@
     <Content Include="Views\StudentAddresses\Edit.cshtml" />
     <Content Include="Views\StudentAddresses\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SchoolEF6.DAL\SchoolEF6.DAL.csproj">
+      <Project>{b83b5eb7-989a-45dc-a075-5aa211063ed1}</Project>
+      <Name>SchoolEF6.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
