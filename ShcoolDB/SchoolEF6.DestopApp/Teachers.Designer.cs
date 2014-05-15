@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Teachers));
+            System.Windows.Forms.Label standardIdLabel;
+            System.Windows.Forms.Label teacherIdLabel;
+            System.Windows.Forms.Label teacherNameLabel;
+            System.Windows.Forms.Label descriptionLabel;
+            System.Windows.Forms.Label standardIdLabel1;
+            System.Windows.Forms.Label standardNameLabel;
             this.teacherBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -43,17 +49,29 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.teacherBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.teacherDataGridView = new System.Windows.Forms.DataGridView();
+            this.standardIdTextBox = new System.Windows.Forms.TextBox();
+            this.teacherIdTextBox = new System.Windows.Forms.TextBox();
+            this.teacherNameTextBox = new System.Windows.Forms.TextBox();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.standardIdTextBox1 = new System.Windows.Forms.TextBox();
+            this.standardNameTextBox = new System.Windows.Forms.TextBox();
+            this.teacherBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.courseDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacherBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            standardIdLabel = new System.Windows.Forms.Label();
+            teacherIdLabel = new System.Windows.Forms.Label();
+            teacherNameLabel = new System.Windows.Forms.Label();
+            descriptionLabel = new System.Windows.Forms.Label();
+            standardIdLabel1 = new System.Windows.Forms.Label();
+            standardNameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.teacherBindingNavigator)).BeginInit();
             this.teacherBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // teacherBindingNavigator
@@ -82,7 +100,7 @@
             this.teacherBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.teacherBindingNavigator.Name = "teacherBindingNavigator";
             this.teacherBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.teacherBindingNavigator.Size = new System.Drawing.Size(620, 27);
+            this.teacherBindingNavigator.Size = new System.Drawing.Size(611, 27);
             this.teacherBindingNavigator.TabIndex = 0;
             this.teacherBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -180,63 +198,168 @@
             this.teacherBindingNavigatorSaveItem.Text = "Save Data";
             this.teacherBindingNavigatorSaveItem.Click += new System.EventHandler(this.teacherBindingNavigatorSaveItem_Click);
             // 
-            // teacherDataGridView
+            // standardIdLabel
             // 
-            this.teacherDataGridView.AutoGenerateColumns = false;
-            this.teacherDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.teacherDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.teacherDataGridView.DataSource = this.teacherBindingSource;
-            this.teacherDataGridView.Location = new System.Drawing.Point(16, 27);
-            this.teacherDataGridView.Name = "teacherDataGridView";
-            this.teacherDataGridView.RowTemplate.Height = 27;
-            this.teacherDataGridView.Size = new System.Drawing.Size(576, 220);
-            this.teacherDataGridView.TabIndex = 1;
+            standardIdLabel.AutoSize = true;
+            standardIdLabel.Location = new System.Drawing.Point(12, 29);
+            standardIdLabel.Name = "standardIdLabel";
+            standardIdLabel.Size = new System.Drawing.Size(77, 15);
+            standardIdLabel.TabIndex = 1;
+            standardIdLabel.Text = "Standard Id:";
             // 
-            // dataGridViewTextBoxColumn1
+            // standardIdTextBox
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "TeacherId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "TeacherId";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.standardIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teacherBindingSource, "StandardId", true));
+            this.standardIdTextBox.Location = new System.Drawing.Point(111, 26);
+            this.standardIdTextBox.Name = "standardIdTextBox";
+            this.standardIdTextBox.Size = new System.Drawing.Size(100, 25);
+            this.standardIdTextBox.TabIndex = 2;
             // 
-            // dataGridViewTextBoxColumn2
+            // teacherIdLabel
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TeacherName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "TeacherName";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            teacherIdLabel.AutoSize = true;
+            teacherIdLabel.Location = new System.Drawing.Point(12, 60);
+            teacherIdLabel.Name = "teacherIdLabel";
+            teacherIdLabel.Size = new System.Drawing.Size(72, 15);
+            teacherIdLabel.TabIndex = 3;
+            teacherIdLabel.Text = "Teacher Id:";
             // 
-            // dataGridViewTextBoxColumn3
+            // teacherIdTextBox
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "StandardId";
-            this.dataGridViewTextBoxColumn3.HeaderText = "StandardId";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.teacherIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teacherBindingSource, "TeacherId", true));
+            this.teacherIdTextBox.Location = new System.Drawing.Point(111, 57);
+            this.teacherIdTextBox.Name = "teacherIdTextBox";
+            this.teacherIdTextBox.Size = new System.Drawing.Size(100, 25);
+            this.teacherIdTextBox.TabIndex = 4;
             // 
-            // dataGridViewTextBoxColumn4
+            // teacherNameLabel
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Course";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Course";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            teacherNameLabel.AutoSize = true;
+            teacherNameLabel.Location = new System.Drawing.Point(12, 91);
+            teacherNameLabel.Name = "teacherNameLabel";
+            teacherNameLabel.Size = new System.Drawing.Size(93, 15);
+            teacherNameLabel.TabIndex = 5;
+            teacherNameLabel.Text = "Teacher Name:";
             // 
-            // dataGridViewTextBoxColumn5
+            // teacherNameTextBox
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Standard";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Standard";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.teacherNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teacherBindingSource, "TeacherName", true));
+            this.teacherNameTextBox.Location = new System.Drawing.Point(111, 88);
+            this.teacherNameTextBox.Name = "teacherNameTextBox";
+            this.teacherNameTextBox.Size = new System.Drawing.Size(100, 25);
+            this.teacherNameTextBox.TabIndex = 6;
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(254, 32);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(76, 15);
+            descriptionLabel.TabIndex = 7;
+            descriptionLabel.Text = "Description:";
+            // 
+            // descriptionTextBox
+            // 
+            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teacherBindingSource, "Standard.Description", true));
+            this.descriptionTextBox.Location = new System.Drawing.Point(358, 29);
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(100, 25);
+            this.descriptionTextBox.TabIndex = 8;
+            // 
+            // standardIdLabel1
+            // 
+            standardIdLabel1.AutoSize = true;
+            standardIdLabel1.Location = new System.Drawing.Point(254, 63);
+            standardIdLabel1.Name = "standardIdLabel1";
+            standardIdLabel1.Size = new System.Drawing.Size(77, 15);
+            standardIdLabel1.TabIndex = 9;
+            standardIdLabel1.Text = "Standard Id:";
+            // 
+            // standardIdTextBox1
+            // 
+            this.standardIdTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teacherBindingSource, "Standard.StandardId", true));
+            this.standardIdTextBox1.Location = new System.Drawing.Point(358, 60);
+            this.standardIdTextBox1.Name = "standardIdTextBox1";
+            this.standardIdTextBox1.Size = new System.Drawing.Size(100, 25);
+            this.standardIdTextBox1.TabIndex = 10;
+            // 
+            // standardNameLabel
+            // 
+            standardNameLabel.AutoSize = true;
+            standardNameLabel.Location = new System.Drawing.Point(254, 94);
+            standardNameLabel.Name = "standardNameLabel";
+            standardNameLabel.Size = new System.Drawing.Size(98, 15);
+            standardNameLabel.TabIndex = 11;
+            standardNameLabel.Text = "Standard Name:";
+            // 
+            // standardNameTextBox
+            // 
+            this.standardNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.teacherBindingSource, "Standard.StandardName", true));
+            this.standardNameTextBox.Location = new System.Drawing.Point(358, 91);
+            this.standardNameTextBox.Name = "standardNameTextBox";
+            this.standardNameTextBox.Size = new System.Drawing.Size(100, 25);
+            this.standardNameTextBox.TabIndex = 12;
             // 
             // teacherBindingSource
             // 
             this.teacherBindingSource.DataSource = typeof(SchoolEF6.DAL.Teacher);
+            this.teacherBindingSource.CurrentItemChanged += new System.EventHandler(this.teacherBindingSource_CurrentItemChanged);
+            // 
+            // courseBindingSource
+            // 
+            this.courseBindingSource.DataSource = typeof(SchoolEF6.DAL.Course);
+            // 
+            // courseDataGridView
+            // 
+            this.courseDataGridView.AutoGenerateColumns = false;
+            this.courseDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.courseDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.courseDataGridView.DataSource = this.courseBindingSource;
+            this.courseDataGridView.Location = new System.Drawing.Point(15, 173);
+            this.courseDataGridView.Name = "courseDataGridView";
+            this.courseDataGridView.RowTemplate.Height = 27;
+            this.courseDataGridView.Size = new System.Drawing.Size(579, 276);
+            this.courseDataGridView.TabIndex = 13;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CourseId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "CourseId";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CourseName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "CourseName";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Location";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Location";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // Teachers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 267);
-            this.Controls.Add(this.teacherDataGridView);
+            this.ClientSize = new System.Drawing.Size(611, 473);
+            this.Controls.Add(this.courseDataGridView);
+            this.Controls.Add(descriptionLabel);
+            this.Controls.Add(this.descriptionTextBox);
+            this.Controls.Add(standardIdLabel1);
+            this.Controls.Add(this.standardIdTextBox1);
+            this.Controls.Add(standardNameLabel);
+            this.Controls.Add(this.standardNameTextBox);
+            this.Controls.Add(standardIdLabel);
+            this.Controls.Add(this.standardIdTextBox);
+            this.Controls.Add(teacherIdLabel);
+            this.Controls.Add(this.teacherIdTextBox);
+            this.Controls.Add(teacherNameLabel);
+            this.Controls.Add(this.teacherNameTextBox);
             this.Controls.Add(this.teacherBindingNavigator);
             this.Name = "Teachers";
             this.Text = "Teachers";
@@ -244,8 +367,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.teacherBindingNavigator)).EndInit();
             this.teacherBindingNavigator.ResumeLayout(false);
             this.teacherBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,11 +391,18 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton teacherBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView teacherDataGridView;
+        private System.Windows.Forms.TextBox standardIdTextBox;
+        private System.Windows.Forms.TextBox teacherIdTextBox;
+        private System.Windows.Forms.TextBox teacherNameTextBox;
+        private System.Windows.Forms.TextBox descriptionTextBox;
+        private System.Windows.Forms.TextBox standardIdTextBox1;
+        private System.Windows.Forms.TextBox standardNameTextBox;
+        private System.Windows.Forms.BindingSource courseBindingSource;
+        private System.Windows.Forms.DataGridView courseDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+
+
     }
 }
